@@ -1,0 +1,6 @@
+.idea
+dist
+# TODO: Ignore libs moving forward (when it's actually being used)
+# libs
+node_modules
+bower_components

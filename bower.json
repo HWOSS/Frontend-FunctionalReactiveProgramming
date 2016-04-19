@@ -1,0 +1,17 @@
+{
+  "name": "hw-frp-stack",
+  "description": "HeathWallace Functional Reactive Programming Stack",
+  "main": "",
+  "authors": [
+    "patrickmarabeas <patrick.marabeas@heathwallace.com>"
+  ],
+  "license": "",
+  "homepage": "https://github.com/patrickmarabeas/HeathWallace-FRP-Stack",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
