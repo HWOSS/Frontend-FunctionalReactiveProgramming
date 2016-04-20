@@ -16,9 +16,9 @@ DOM abstraction; one-way binding; UI library
 
 ` npm install `
 
-` python -m SimpleHTTPServer 8080 `
+` npm start `
 
-` localhost:8080 `
+` localhost:3333 `
 
 ## Aims
 
