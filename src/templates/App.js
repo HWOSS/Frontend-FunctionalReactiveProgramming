@@ -31,7 +31,9 @@ const App = (props)=> {
 
     <div>
 
-      <HelloWorld />
+      <HelloWorld toggleClass="open" />
+
+      <HelloWorld toggleClass="active" />
 
       <div>This would be another component</div>
 

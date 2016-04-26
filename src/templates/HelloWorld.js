@@ -1,13 +1,11 @@
 
-import React            from 'react';
-import MousePosition    from '../components/MousePosition.js'
+import React      from 'react';
+import Toggle     from '../components/Toggle.js'
 
-const HelloWorld = (props)=> {
-  return (
-    <div>
-      <span>Hello World</span>
-    </div>
-  )
-};
+const HelloWorld = (props) => (
+  <div {...props}>
+    <span>Hello World</span>
+  </div>
+);
 
-export default MousePosition(HelloWorld);
+export default Toggle(HelloWorld);
