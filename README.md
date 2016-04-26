@@ -44,4 +44,5 @@ DOM abstraction; one-way binding; UI library
 - Limit libs which have silly dependencies
 - Test coverage
   - will there be a significant change in workflow/tooling here?
+- Observables will probably make their way into ES7, making Rx almost a shim of sorts. Can we easy switch over when the API is concrete and Babel et el are able to transpile?
 
