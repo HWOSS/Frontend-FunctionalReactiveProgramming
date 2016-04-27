@@ -35,8 +35,6 @@ const App = (props)=> {
 
       <HelloWorld toggleClass="active" />
 
-      <div>This would be another component</div>
-
     </div>
 
   )

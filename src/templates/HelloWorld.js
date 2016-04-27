@@ -4,7 +4,7 @@ import Toggle     from '../components/Toggle.js'
 
 const HelloWorld = (props) => (
   <div {...props}>
-    <span>Hello World</span>
+    <span>Hello World (click to toggle me!)</span>
   </div>
 );
 
