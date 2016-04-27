@@ -1,6 +1,7 @@
 import { Observable }   from 'rx';
 import React            from 'react';
-import { click$ }       from './DocumentEvents.js';
+import { scrollUp$, scrollDown$ }
+                        from './DocumentEvents.js';
 
 
 /**
@@ -11,13 +12,15 @@ function intent() {
 
   /**
    *
-   * TODO: Click should be on the button only
+   * TODO: Add click intents to the appropriate buttons
    *
    */
 
   return {
 
-    increment$: click$
+    increment$: scrollUp$,
+
+    decrement$: scrollDown$
 
   }
 }
@@ -26,12 +29,19 @@ function intent() {
 /**
  * Model
  *
- * TODO: Currently starting at 1 instead of 0
- *
  */
 function model(actions) {
-  console.log('actions.increment$ -> ', actions.increment$);
-  return actions.increment$.startWith(0).map(e => 1).scan((x, y) => x + y);
+
+  const count$ = Observable
+    .merge(
+      actions.increment$.map(e => 1),
+      actions.decrement$.map(e => -1))
+    .scan((x, y) => x + y);
+
+  return {
+    count$
+  };
+
 }
 
 
@@ -40,13 +50,14 @@ function model(actions) {
  *
  * Returns a MapObservable
  */
-function view(count$) {
+function view({count$}) {
 
-  return count$.map((count) => (
+  return count$.startWith(0).map((count) => (
 
     <div>
-      <div>Currently tracks all clicks on document</div>
-      <button>Pressed { count } times</button>
+      <h2>{ count }</h2>
+      <button>increment</button>
+      <button>decrement</button>
     </div>
 
   ));

@@ -31,7 +31,6 @@ import Counter      from './components/Counter.js';
  *
  */
 Counter().subscribe(app => {
-  console.log(app);
   ReactDOM.render(app, document.getElementById('FRCApp'));
 });
 
