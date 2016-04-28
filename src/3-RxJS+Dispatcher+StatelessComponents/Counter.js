@@ -1,7 +1,7 @@
 import { Observable } from 'rx';
 import React          from 'react';
 import { dispatcher$, send }
-                      from './_dispatcher'
+                      from './Dispatcher'
 
 function intent() {
 
