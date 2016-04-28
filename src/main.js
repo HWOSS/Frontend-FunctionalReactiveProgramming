@@ -23,14 +23,14 @@ ReactDOM.render(<App />, document.getElementById('app'));
  * RFP Components
  *
  */
-import Counter      from './components/Counter.js';
+import ParentComponent      from './components/ParentComponent.js';
 
 /**
  *
  * Subscribe to the components MapObservable stream
  *
  */
-Counter().subscribe(app => {
+ParentComponent().subscribe(app => {
   ReactDOM.render(app, document.getElementById('FRCApp'));
 });
 

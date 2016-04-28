@@ -1,7 +1,7 @@
-import { Observable }   from 'rx';
-import React            from 'react';
+import { Observable }     from 'rx';
+import React              from 'react';
 import { scrollUp$, scrollDown$ }
-                        from './DocumentEvents.js';
+                          from './DocumentEvents.js';
 
 
 /**
@@ -9,6 +9,8 @@ import { scrollUp$, scrollDown$ }
  *
  */
 function intent() {
+
+  console.log('intent');
 
   /**
    *
@@ -32,6 +34,8 @@ function intent() {
  */
 function model(actions) {
 
+  console.log('model');
+
   const count$ = Observable
     .merge(
       actions.increment$.map(e => 1),
@@ -52,6 +56,8 @@ function model(actions) {
  */
 function view({count$}) {
 
+  console.log('view');
+
   return count$.startWith(0).map((count) => (
 
     <div>
@@ -68,8 +74,10 @@ function view({count$}) {
  * The Component
  *
  */
+const component = view(model(intent()));
+
 function Counter() {
-  return view(model(intent()));
+  return component;
 }
 
-export default Counter
+export default Counter;
