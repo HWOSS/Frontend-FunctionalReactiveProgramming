@@ -43,6 +43,9 @@ App2().subscribe(app => {
 /**
  * 3 - RxJS + Dispatcher + Stateless Components
  *
+ * - Still only dealing with singletons
+ * - Need to improve on manner App component constructs its contents
+ *
  */
 import App3 from './3-RxJS+Dispatcher+StatelessComponents/App.js';
 
