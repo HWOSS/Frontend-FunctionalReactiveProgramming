@@ -4,6 +4,19 @@ import { scrollUp$, scrollDown$ }
                           from './DocumentEvents.js';
 
 
+const elm = (count) => (
+
+  <div>
+    <h2>{ count }</h2>
+    <button>increment</button>
+    <button>decrement</button>
+  </div>
+
+);
+
+//Observable.fromEvent(elm, 'click').subscribe(() => console.log('clicked yo!'));
+
+
 /**
  * Intent
  *
@@ -59,21 +72,17 @@ function view({count$}) {
 
   console.log('view');
 
-  const element = count$.map((count) => (
+  const element = count$.map((count) => {
+    return (
+      elm(count)
+    )
+  });
 
-    <div>
-      <h2>{ count }</h2>
-      <button>increment</button>
-      <button>decrement</button>
-    </div>
-
-  ));
-
-  const props = 'passing something up to parent';
+  //const anotherElement = <div></div>;
 
   return {
-    element,
-    props
+    element
+    //anotherElement
   }
 }
 

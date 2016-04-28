@@ -3,7 +3,7 @@ import React          from 'react';
 import Counter        from './Counter';
 
 
-const { element, props } = Counter();
+const { element /**, anotherElement? **/ } = Counter();
 
 
 function view() {
@@ -15,8 +15,6 @@ function view() {
 
       <section>
         <div>This component wraps the Counter component with a section element and hrs</div>
-        <div> It also prints out a string which was set in child</div>
-        <div>{ props }</div>
         <hr />
         { component }
         <hr />
