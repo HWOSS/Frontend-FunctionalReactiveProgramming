@@ -8,7 +8,7 @@ const { element /**, anotherElement? **/ } = Counter();
 
 function view() {
 
-  console.log('parent view');
+  console.log('2 - app view');
 
   return element.map((component) => {
     return (
@@ -27,9 +27,9 @@ function view() {
 
 const component = view();
 
-function ParentComponent() {
+function App() {
   return component;
 }
 
-export default ParentComponent;
+export default App;
 

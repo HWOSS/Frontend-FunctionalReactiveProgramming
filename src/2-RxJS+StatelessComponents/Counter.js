@@ -8,6 +8,7 @@ const elm = (count) => (
 
   <div>
     <h2>{ count }</h2>
+    <div>Scroll to increment / decrement number</div>
     <button>increment</button>
     <button>decrement</button>
   </div>
@@ -23,7 +24,7 @@ const elm = (count) => (
  */
 function intent() {
 
-  console.log('intent');
+  console.log('2 - counter intent');
 
   /**
    *
@@ -47,7 +48,7 @@ function intent() {
  */
 function model(actions) {
 
-  console.log('model');
+  console.log('2 - counter model');
 
   const count$ = Observable
     .merge(
@@ -70,7 +71,7 @@ function model(actions) {
  */
 function view({count$}) {
 
-  console.log('view');
+  console.log('2 - counter view');
 
   const element = count$.map((count) => {
     return (

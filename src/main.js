@@ -10,27 +10,37 @@ import React    from 'react';
 import ReactDOM from 'react-dom';
 
 
-/**
- * Stateless / Higher Order Components
- *
- */
-import App      from './templates/App.js';
-
-ReactDOM.render(<App />, document.getElementById('app'));
 
 
 /**
- * RFP Components
+ * 1 - Stateless + Higher Order Components
  *
  */
-import ParentComponent      from './components/ParentComponent.js';
+import App from './1-Stateless+HigherOrderComponents/App.js';
+
+ReactDOM.render(<App />, document.getElementById('app1'));
+
+
+
 
 /**
+ * 2 - RxJS + Stateless Components
  *
- * Subscribe to the components MapObservable stream
+ * - Currently only produces singletons
+ * - Needs method to set Observables on elements within the component
  *
  */
-ParentComponent().subscribe(app => {
-  ReactDOM.render(app, document.getElementById('FRCApp'));
+import App2 from './2-RxJS+StatelessComponents/App.js';
+
+// Subscribe to the components MapObservable stream
+App2().subscribe(app => {
+  ReactDOM.render(app, document.getElementById('app2'));
 });
 
+
+
+
+/**
+ * 3 - RxJS + Dispatcher + Stateless Components
+ *
+ */

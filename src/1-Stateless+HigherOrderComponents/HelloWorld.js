@@ -1,6 +1,6 @@
 
 import React      from 'react';
-import Toggle     from '../components/Toggle.js'
+import Toggle     from './Toggle.js'
 
 const HelloWorld = (props) => (
   <div {...props}>
