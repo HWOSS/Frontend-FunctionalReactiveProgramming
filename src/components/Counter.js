@@ -40,6 +40,7 @@ function model(actions) {
     .merge(
       actions.increment$.map(e => 1),
       actions.decrement$.map(e => -1))
+    .startWith(0)
     .scan((x, y) => x + y);
 
   return {
@@ -58,7 +59,7 @@ function view({count$}) {
 
   console.log('view');
 
-  return count$.startWith(0).map((count) => (
+  const element = count$.map((count) => (
 
     <div>
       <h2>{ count }</h2>
@@ -67,6 +68,13 @@ function view({count$}) {
     </div>
 
   ));
+
+  const props = 'passing something up to parent';
+
+  return {
+    element,
+    props
+  }
 }
 
 
