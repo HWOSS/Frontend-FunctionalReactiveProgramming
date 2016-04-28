@@ -9,3 +9,28 @@ const HelloWorld = (props) => (
 );
 
 export default Toggle(HelloWorld);
+
+
+
+
+//const MyStatelessComponent = (props)=> {
+//  return (
+//    <div>
+//      <span>Thingy {props.something}</span>
+//    </div>
+//  )
+//};
+
+// Implicit return
+//const MyStatelessComponent = (props)=> (
+//  <div>
+//    <span>Thingy {props.something}</span>
+//  </div>
+//);
+
+// Destruct props
+//const MyStatelessComponent = ({something, anotherThing})=> (
+//  <div>
+//    <span>Thingy {something}</span>
+//  </div>
+//);

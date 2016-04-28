@@ -1,6 +1,17 @@
+
 import {Observable}   from 'rx';
 import React          from 'react';
 
+/**
+ * Creating a new component
+ *
+ * - The class name needs to be Capitalised
+ * - Ensure React and Component are both capitalised
+ *
+ * Component Specs and Lifecycle:
+ * https://facebook.github.io/react/docs/component-specs.html
+ *
+ */
 let Toggle = (ComposedComponent) => class extends React.Component {
 
   constructor(props) {
@@ -47,6 +58,15 @@ let Toggle = (ComposedComponent) => class extends React.Component {
 
   }
 
+  /**
+   * render function
+   * -- REQUIRED --
+   *
+   * - Examines this.props and this.state
+   * - Returns a single child element or another composite component
+   * - Should be a pure function; do not modify component
+   *
+   */
   render() {
     return (
       <ComposedComponent
@@ -92,6 +112,8 @@ let Toggle = (ComposedComponent) => class extends React.Component {
 //  .shareReplay(1)
 
 /**
+ * Property validation:
+ * https://facebook.github.io/react/docs/reusable-components.html#prop-validation
  *
  * TODO: OUTDATED
  *
@@ -101,6 +123,10 @@ Toggle.propTypes = {
   y: React.PropTypes.number
 };
 
+/**
+ * Property defaults:
+ * https://facebook.github.io/react/docs/reusable-components.html#default-prop-values
+ */
 Toggle.defaultProps = {
   x: 45,
   y: 54
