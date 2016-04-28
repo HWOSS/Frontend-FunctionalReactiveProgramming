@@ -1,18 +1,12 @@
 import { Observable } from 'rx';
 import React          from 'react';
-import { Dispatcher, send }
+import { dispatcher$, send }
                       from './_dispatcher'
 
 
 function model() {
 
   console.log('3 - counter model');
-
-  //console.log(Dispatcher);
-
-  const dispatcher$ = Observable.merge(Dispatcher).shareReplay(1);
-
-  //console.log(dispatcher$);
 
   const increment$ = dispatcher$
     .filter(x => x.action === 'Increment')

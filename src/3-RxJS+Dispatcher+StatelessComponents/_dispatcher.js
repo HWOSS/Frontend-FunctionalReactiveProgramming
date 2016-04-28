@@ -1,6 +1,11 @@
-import { Subject }  from 'rx';
+import { Subject, Observable }  from 'rx';
 
 const Dispatcher = new Subject();
+
+const dispatcher$ = Observable.merge(Dispatcher).shareReplay(1);
+
+//console.log(Dispatcher);
+//console.log(dispatcher$);
 
 function send(action, data) {
   Dispatcher.onNext({action, data});
@@ -20,6 +25,6 @@ function send(action, data) {
 //  );
 
 export {
-  Dispatcher,
+  dispatcher$,
   send
 };
