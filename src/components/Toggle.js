@@ -41,7 +41,6 @@ let Toggle = (ComposedComponent) => class extends React.Component {
 
 
   guyFace() {
-    console.log('got me');
     this.active = !this.active;
     this.class = this.active ? this.props.toggleClass : '';
     this.forceUpdate();
@@ -49,8 +48,6 @@ let Toggle = (ComposedComponent) => class extends React.Component {
   }
 
   render() {
-    console.log('rendering');
-
     return (
       <ComposedComponent
         onClick     = { () => this.guyFace() }
@@ -62,9 +59,7 @@ let Toggle = (ComposedComponent) => class extends React.Component {
     )
   }
 
-  componentWillMount() {
-    console.log('poop');
-  }
+  componentWillMount() { }
 
   componentDidMount() { }
 
@@ -72,9 +67,7 @@ let Toggle = (ComposedComponent) => class extends React.Component {
 
   shouldComponentUpdate() { }
 
-  componentWillUpdate() {
-    console.log('updating');
-  }
+  componentWillUpdate() { }
 
   componentDidUpdate() { }
 
