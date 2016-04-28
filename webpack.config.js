@@ -8,6 +8,7 @@ var webpack   = require('webpack')
 
 module.exports = {
   entry: SRC_DIR + '/main.js',
+  devtool: 'source-map',
   output: {
     path: BUILD_DIR,
     publicPath: '/dist/',
