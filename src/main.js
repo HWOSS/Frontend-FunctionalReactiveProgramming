@@ -44,3 +44,8 @@ App2().subscribe(app => {
  * 3 - RxJS + Dispatcher + Stateless Components
  *
  */
+import App3 from './3-RxJS+Dispatcher+StatelessComponents/App.js';
+
+App3().subscribe(app => {
+  ReactDOM.render(app, document.getElementById('app3'));
+});
