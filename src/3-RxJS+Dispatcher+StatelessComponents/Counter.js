@@ -3,21 +3,31 @@ import React          from 'react';
 import { dispatcher$, send }
                       from './_dispatcher'
 
+function intent() {
 
-function model() {
+  console.log('3 - counter intent');
+
+  const increment$ = dispatcher$
+    .filter(x => x.action === 'Increment');
+
+  const decrement$ = dispatcher$
+    .filter(x => x.action === 'Decrement');
+
+  return {
+    increment$,
+    decrement$
+  }
+}
+
+
+function model({increment$, decrement$}) {
 
   console.log('3 - counter model');
 
-  const increment$ = dispatcher$
-    .filter(x => x.action === 'Increment')
-    .map(x => 1);
-
-  const decrement$ = dispatcher$
-    .filter(x => x.action === 'Decrement')
-    .map(x => -1);
-
   const count$ = Observable
-    .merge(increment$, decrement$)
+    .merge(
+      increment$.map(x => 1),
+      decrement$.map(x => -1))
     .startWith(0)
     .scan((x, y) => x + y);
 
@@ -45,7 +55,7 @@ function view({count$}) {
 }
 
 
-const component = view(model());
+const component = view(model(intent()));
 function Counter() {
   return component;
 }
