@@ -3,8 +3,17 @@ import React            from 'react';
 import Counter          from './Counter.js';
 
 
+
+const
+    c1  = Counter()
+  , c2  = Counter()
+  ;
+
+//Observable.merge() ?????
+
+
 function view() {
-  return Counter().map((component) => {
+  return c1.map((component) => {
 
     return (
 
