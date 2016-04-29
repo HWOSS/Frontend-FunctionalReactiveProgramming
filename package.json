@@ -1,21 +1,23 @@
 {
-  "name": "hw-frp-stack",
+  "name": "Frontend-FunctionalReactiveProgramming",
   "version": "0.0.1",
-  "description": "HeathWallace Functional Reactive Programming Stack",
+  "description": "Front-end Functional Reactive Programming",
   "main": "dist/index.js",
   "scripts": {
     "start": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/heathwallace/HeathWallace-FRP-Stack.git"
+    "url": "git+https://github.com/HWOSS/Frontend-FunctionalReactiveProgramming.git"
   },
-  "author": "",
+  "contributors": [
+    "patrickmarabeas <patrick.marabeas@heathwallace.com>"
+  ],
   "license": "",
   "bugs": {
-    "url": "https://github.com/heathwallace/HeathWallace-FRP-Stack/issues"
+    "url": "https://github.com/HWOSS/Frontend-FunctionalReactiveProgramming/issues"
   },
-  "homepage": "https://github.com/heathwallace/HeathWallace-FRP-Stack#readme",
+  "homepage": "https://github.com/HWOSS/Frontend-FunctionalReactiveProgramming#readme",
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-core": "^6.7.6",

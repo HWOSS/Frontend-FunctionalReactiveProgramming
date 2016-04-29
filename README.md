@@ -1,5 +1,5 @@
-# HeathWallace FRP Stack
-Exploring the paradigm of functional reactive programming as a HeathWallace tech stack
+# Front-end Functional Reactive Programming
+Exploring the paradigm of functional reactive programming as a tech stack
 
 ## Technologies
 #### ES2015
@@ -22,27 +22,16 @@ DOM abstraction; one-way binding; UI library
 
 ## Aims
 
-- Explore the paradigm of functional reactive programming
-- Look at the separation of concerns between ---- MVC
-- Componentised
-  - When a better e.g. DOM abstraction comes along we want to be able to swap it in
-- Don't over abstract
-  - Write in vanilla ES 2015 / latest
-  - Polyfill rather than yet another abstraction layer
-- Ascertain whether this can work within HeathWallace's current needs and workflow
-  - Creation of flat files in many cases for backend integration
+- Explore the paradigm of functional reactive programming in the context of front-end development
+- Explore the separation of concerns, MVC?
+- How much can be pure ECMAScript with libraries essentially being polyfills/shims
+- Can this be a feasible implementation in different contexts
+  - Creation of flat markup for backend integration
   - SPA builds
-  - Semi-native phone applications
-- Determine whether ArmatureJS can be broken into small components which are usable outside of the current ArmatureJS ecosystem
-- Is there a 1:1 corolation between Armature's helper libs and e.g. LoDash, if not can they be refactored to align
-  - Stop the requirement of developers needing to learn yet another API set
-- Static type checking?
-- Establish a build pipeline
-- Determine how to include dependencies and bring them in as required
-  - Yeoman or something?
-  - Sure this can be done without yet another dependency
-- Limit libs which have silly dependencies
-- Test coverage
-  - will there be a significant change in workflow/tooling here?
-- Observables will probably make their way into ES7, making Rx almost a shim of sorts. Can we easy switch over when the API is concrete and Babel et el are able to transpile?
-
+  - Semi-native device applications
+- Explore testing solutions
+- Explore routing solutions
+- Explore build pipelines
+- Aim to keep API area to a minimum; application of concepts
+- Don't want this to be yet another framework
+- Limit dependencies

@@ -1,12 +1,12 @@
 {
-  "name": "hw-frp-stack",
-  "description": "HeathWallace Functional Reactive Programming Stack",
+  "name": "Frontend-FunctionalReactiveProgramming",
+  "description": "Front-end Functional Reactive Programming",
   "main": "",
   "authors": [
     "patrickmarabeas <patrick.marabeas@heathwallace.com>"
   ],
   "license": "",
-  "homepage": "https://github.com/patrickmarabeas/HeathWallace-FRP-Stack",
+  "homepage": "https://github.com/HWOSS/Front-end Functional Reactive Programming",
   "ignore": [
     "**/.*",
     "node_modules",
