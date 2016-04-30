@@ -5,24 +5,40 @@ import Counter          from './Counter.js';
 
 
 const
-    c1  = Counter()
-  , c2  = Counter()
+    c1$  = Counter()
+  , c2$  = Counter()
   ;
 
-//Observable.merge() ?????
+const component$ =
+  Observable.merge(
+    c1$,
+    c2$
+  );
 
 
 function view() {
-  return c1.map((component) => {
 
-    return (
+  console.log('3 - app view');
 
-      <div>
-        { component }
-      </div>
+  return component$.concatMap((c) => {
 
-    )
+    return c1$.concatMap((c1) => {
+
+      return c2$.map((c2) => {
+
+        return (
+          <div>
+            {c1}
+            {c2}
+          </div>
+        )
+
+      });
+
+    });
+
   });
+
 }
 
 
