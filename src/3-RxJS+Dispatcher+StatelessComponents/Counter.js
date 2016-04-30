@@ -29,15 +29,9 @@ function model({props, increment$, decrement$}) {
     .merge(
       increment$.map(x => 1),
       decrement$.map(x => -1))
-    /**
-     *
-     * TODO: Not running specific for component
-     *
-     */
-    .do(() => console.log('running'))
     .startWith(0)
-
-    .scan((x, y) => x + y);
+    .scan((x, y) => x + y)
+    .shareReplay(1);
 
   return {
     props,
