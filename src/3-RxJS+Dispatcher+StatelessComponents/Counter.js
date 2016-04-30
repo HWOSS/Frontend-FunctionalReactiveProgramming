@@ -3,24 +3,25 @@ import React          from 'react';
 import { dispatcher$, send }
                       from './Dispatcher'
 
-function intent() {
+function intent(props) {
 
   console.log('3 - counter intent');
 
   const increment$ = dispatcher$
-    .filter(x => x.action === 'Increment');
+    .filter(x => x.action === 'Increment' && x.data.ref === props.ref);
 
   const decrement$ = dispatcher$
-    .filter(x => x.action === 'Decrement');
+    .filter(x => x.action === 'Decrement' && x.data.ref === props.ref);
 
   return {
+    props,
     increment$,
     decrement$
   }
 }
 
 
-function model({increment$, decrement$}) {
+function model({props, increment$, decrement$}) {
 
   console.log('3 - counter model');
 
@@ -28,17 +29,25 @@ function model({increment$, decrement$}) {
     .merge(
       increment$.map(x => 1),
       decrement$.map(x => -1))
+    /**
+     *
+     * TODO: Not running specific for component
+     *
+     */
+    .do(() => console.log('running'))
     .startWith(0)
+
     .scan((x, y) => x + y);
 
   return {
+    props,
     count$
   };
 
 }
 
 
-function view({count$}) {
+function view({props, count$}) {
 
   console.log('3 - counter view');
 
@@ -46,8 +55,8 @@ function view({count$}) {
 
     <div>
       <h1>{ count }</h1>
-      <button onClick={() => send('Increment', null)}>+</button>
-      <button onClick={() => send('Decrement', null)}>-</button>
+      <button onClick={() => send('Increment', props)}>+</button>
+      <button onClick={() => send('Decrement', props)}>-</button>
     </div>
 
   ));
@@ -55,9 +64,9 @@ function view({count$}) {
 }
 
 
-const component = view(model(intent()));
-function Counter() {
-  return component;
+const component = (props) => view(model(intent(props)));
+function Counter(props) {
+  return component(props);
 }
 
 export default Counter;
