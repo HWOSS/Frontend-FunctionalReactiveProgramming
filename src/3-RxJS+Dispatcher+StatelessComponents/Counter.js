@@ -3,15 +3,16 @@ import React          from 'react';
 import { dispatcher$, send }
                       from './Dispatcher'
 
+
 function intent(props) {
 
   console.log('3 - counter intent');
 
   const increment$ = dispatcher$
-    .filter(x => x.action === 'Increment' && x.data.ref === props.ref);
+    .filter(x => x.action === 'Increment' && x.props.ref === props.ref);
 
   const decrement$ = dispatcher$
-    .filter(x => x.action === 'Decrement' && x.data.ref === props.ref);
+    .filter(x => x.action === 'Decrement' && x.props.ref === props.ref);
 
   return {
     props,

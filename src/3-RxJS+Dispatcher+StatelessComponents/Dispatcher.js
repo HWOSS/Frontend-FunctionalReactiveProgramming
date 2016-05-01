@@ -7,8 +7,8 @@ const dispatcher$ = Observable.merge(Dispatcher).shareReplay(1);
 //console.log(Dispatcher);
 //console.log(dispatcher$);
 
-function send(action, data) {
-  Dispatcher.onNext({action, data});
+function send(action, props) {
+  Dispatcher.onNext({action, props});
 }
 
 //const subscription = Dispatcher

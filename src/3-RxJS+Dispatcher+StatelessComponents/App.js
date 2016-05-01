@@ -3,20 +3,11 @@ import React            from 'react';
 import Counter          from './Counter.js';
 
 
-
 const
     c1$  = Counter({ref: 'c1'})
   , c2$  = Counter({ref: 'c2'})
   , c3$  = Counter({ref: 'c3'})
   ;
-
-const component$ =
-  Observable.merge(
-    c1$,
-    c2$,
-    c3$
-  );
-
 
 function view() {
 
@@ -33,26 +24,21 @@ function view() {
     c1$,
     c2$,
     c3$,
-    (c1, c2, c3) => {
+    (c1, c2, c3) => (
 
-      return (
+      <div>
+        {c1}
+        {c2}
+        {c3}
+      </div>
 
-        <div>
-          {c1}
-          {c2}
-          {c3}
-        </div>
-
-      )
-
-    }
+    )
   );
 
 }
 
 
 const component = view();
-
 function App() {
   return component;
 }
