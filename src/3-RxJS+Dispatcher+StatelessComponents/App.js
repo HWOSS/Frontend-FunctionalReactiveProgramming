@@ -7,12 +7,14 @@ import Counter          from './Counter.js';
 const
     c1$  = Counter({ref: 'c1'})
   , c2$  = Counter({ref: 'c2'})
+  , c3$  = Counter({ref: 'c3'})
   ;
 
 const component$ =
   Observable.merge(
     c1$,
-    c2$
+    c2$,
+    c3$
   );
 
 
@@ -22,37 +24,29 @@ function view() {
 
   /**
    *
-   * TODO: This is ugly
+   * Merges the specified observable sequences into one observable sequence
+   * by using the selector function whenever any of the observable sequences
+   * produces an element.
    *
    */
-  return component$.concatMap((c) => {
-    /**
-     *
-     * flatMap transforms the items emitted by an Observable into Observables,
-     * then flattens the emissions from those into a single Observable
-     *
-     * This method is useful, for example, when you have an Observable that emits
-     * a series of items that themselves have Observable members or are in other
-     * ways transformable into Observables, so that you can create a new Observable
-     * that emits the complete collection of items emitted by the sub-Observables of these items.
-     *
-     */
-    return c1$.flatMap((c1) => {
+  return Observable.combineLatest(
+    c1$,
+    c2$,
+    c3$,
+    (c1, c2, c3) => {
 
-      return c2$.map((c2) => {
+      return (
 
-        return (
-          <div>
-            {c1}
-            {c2}
-          </div>
-        )
+        <div>
+          {c1}
+          {c2}
+          {c3}
+        </div>
 
-      });
+      )
 
-    });
-
-  });
+    }
+  );
 
 }
 
