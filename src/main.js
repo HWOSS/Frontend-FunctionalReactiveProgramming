@@ -18,8 +18,6 @@ import ReactDOM from 'react-dom';
  * - Needs method to set Observables on elements within the component
  *
  * 3 - RxJS + Dispatcher + Stateless Components
- * - Still only dealing with singletons
- * - Need to improve on manner App component constructs its contents
  *
  * 4 - Parent Models and Intents
  *
