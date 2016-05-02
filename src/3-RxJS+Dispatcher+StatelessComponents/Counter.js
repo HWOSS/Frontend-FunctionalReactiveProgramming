@@ -28,7 +28,10 @@ function model({props, increment$, decrement$}) {
 
   const count$ = Observable
     .merge(
-      increment$.map(x => 1),
+      increment$.map(x => {
+        x.e.preventDefault();
+        return 1;
+      }),
       decrement$.map(x => -1))
     .startWith(0)
     .scan((x, y) => x + y)
@@ -50,8 +53,8 @@ function view({props, count$}) {
 
     <div>
       <h1>{ count }</h1>
-      <button onClick={() => send('Increment', props)}>+</button>
-      <button onClick={() => send('Decrement', props)}>-</button>
+      <a href="#" onClick={(e) => send('Increment', props, e)}>+</a>
+      <button onClick={(e) => send('Decrement', props, e)}>-</button>
     </div>
 
   ));
